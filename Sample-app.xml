@@ -60,13 +60,13 @@
             android:name="net.nend.android.internal.ui.activities.video.NendAdInterstitialVideoActivity"
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
             android:hardwareAccelerated="true"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:screenOrientation="behind" />
             <activity
             android:name="net.nend.android.internal.ui.activities.video.NendAdRewardedVideoActivity"
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
             android:hardwareAccelerated="true"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:screenOrientation="behind" />
             </application>
             </manifest>
