@@ -24,6 +24,7 @@
 	import net.nend.adobeair.VideoAdEvent;
 	import net.nend.adobeair.UserFeature;
 	import net.nend.adobeair.Gender;
+	import net.nend.adobeair.Logger;
 
 	public class Sample extends MovieClip {
 		private var bannerAd: BannerAd;
@@ -56,6 +57,10 @@
 			// constructor code
 			list.rowHeight = 100;
 			list.addEventListener(ListEvent.ITEM_CLICK, clickListItem);
+			
+			// Logger
+			Logger.shared.logLevel = Logger.DEBUG;
+			Logger.logging = new MyImplLogger();
 
 			// banner
 			if (isAndroid()) {
@@ -68,7 +73,6 @@
 			bannerAd.addEventListener(BannerAdEvent.CLICK, handleBannerAdEvent);
 			bannerAd.addEventListener(BannerAdEvent.OPTOUT, handleBannerAdEvent);
 			bannerAd.position = positions[currentPosition++];
-			bannerAd.isOutputLog = true;
 
 			list.addItem({
 				label: "LoadBannerAd",
@@ -123,7 +127,6 @@
 			InterstitialAd.shared.addEventListener(InterstitialAdEvent.CLOSE, handleInterstitialAdEvent);
 			InterstitialAd.shared.addEventListener(InterstitialAdEvent.OPTOUT, handleInterstitialAdEvent);
 			InterstitialAd.shared.isAutoReloadEnabled = false;
-			InterstitialAd.shared.isOutputLog = true;
 
 			list.addItem({
 				label: "LoadInterstitialAd",
@@ -169,7 +172,6 @@
 			}
 			nativeAdLoader.addEventListener(NativeAdEvent.COMPLETE, handleNativeAdEvent);
 			nativeAdLoader.addEventListener(NativeAdEvent.ERROR, handleNativeAdEvent);
-			nativeAdLoader.isOutputLog = true;
 
 			list.addItem({
 				label: "LoadNativeAd",
@@ -271,7 +273,6 @@
 			interstitialVideoAd.addEventListener(VideoAdEvent.CLICK, handleVideoAdEvent);
 			interstitialVideoAd.addEventListener(VideoAdEvent.OPTOUT, handleVideoAdEvent);
 			interstitialVideoAd.userId = "interstitialVideoAd-userId";
-			interstitialVideoAd.isOutputLog = true;
 
 			list.addItem({
 				label: "LoadInterstitialVideoAd",
@@ -316,7 +317,6 @@
 			rewardedVideoAd.addEventListener(VideoAdEvent.OPTOUT, handleVideoAdEvent);
 			rewardedVideoAd.addEventListener(VideoAdEvent.REWARDED, handleVideoAdEvent);
 			rewardedVideoAd.userId = "rewardedVideoAd-userId";
-			rewardedVideoAd.isOutputLog = true;
 
 			list.addItem({
 				label: "LoadRewardedVideoAd",
