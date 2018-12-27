@@ -273,6 +273,8 @@
 			interstitialVideoAd.addEventListener(VideoAdEvent.CLICK, handleVideoAdEvent);
 			interstitialVideoAd.addEventListener(VideoAdEvent.OPTOUT, handleVideoAdEvent);
 			interstitialVideoAd.userId = "interstitialVideoAd-userId";
+			interstitialVideoAd.isMuteStartPlaying = false;
+			interstitialVideoAd.isLocationEnabled = false;
 
 			list.addItem({
 				label: "LoadInterstitialVideoAd",
@@ -317,6 +319,7 @@
 			rewardedVideoAd.addEventListener(VideoAdEvent.OPTOUT, handleVideoAdEvent);
 			rewardedVideoAd.addEventListener(VideoAdEvent.REWARDED, handleVideoAdEvent);
 			rewardedVideoAd.userId = "rewardedVideoAd-userId";
+			rewardedVideoAd.isLocationEnabled = false;
 
 			list.addItem({
 				label: "LoadRewardedVideoAd",
