@@ -8,7 +8,7 @@ nendネイティブ拡張の導入方法については[Wiki](https://github.com
 
 ## Requirement
 * Animate CC, Flash Professional CC
-* AIR SDK 24以上
+* AIR SDK 32以上
 
 ## Usage
 
